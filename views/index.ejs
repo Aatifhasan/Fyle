@@ -1,0 +1,64 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pageTitle %></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="heading">
+    <img src="<%=profilePicLink%>" alt="Image">
+    <div class="headtext">
+  <h1><%= pageTitle %></h1>
+  <h5>
+    <%= bio %>
+  </h5>
+  <i class="fas fa-map-marker-alt"></i>    
+    <span><%= locationText %></span>
+  
+
+  </div>
+</div>
+<i class="fas fa-link"></i>
+<a href='<%=githubBaseUrl%>'>
+  <%=shortprofurl%>
+</a>
+<br>
+<hr>
+<div class="repo-table">
+  <% for (let i = 0; i < repositories.length; i += 2) { %>
+    <div class="row">
+      <% for (let j = i; j < i + 2 && j < repositories.length; j++) { %>
+        <div class="repo">
+          <a href="<%= repositories[j].link %>" target="_blank"><%= repositories[j].name %></a>
+          <p class="language"><%= repositories[j].language %></p>
+        </div>
+      <% } %>
+    </div>
+  <% } %>
+</div>
+
+  <!-- Pagination links -->
+  <div>
+    <% if (currentPage > 1) { %>
+      <a href="/<%= currentPage - 1 %>">Previous</a>
+    <% } %>
+
+    <% for (let i = 1; i <= totalPages; i++) { %>
+      <% if (i === currentPage) { %>
+        <span><%= i %></span>
+      <% } else { %>
+        <a href="/<%= i %>"><%= i %></a>
+      <% } %>
+    <% } %>
+
+    <% if (currentPage < totalPages) { %>
+      <a href="/<%= currentPage + 1 %>">Next</a>
+    <% } %>
+  </div>
+</body>
+</html>

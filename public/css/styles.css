@@ -1,0 +1,46 @@
+body{
+    margin: 5%;
+}
+img{
+    
+    border-radius: 50%;
+    width: 10%;
+    margin-bottom: 3%;
+}
+.heading{
+    display: flex;
+    /* margin: 2%; */
+}
+.headtext{
+    margin-left: 5%;
+}
+h1,h5{
+    margin: 1%;
+}
+/* public/css/styles.css */
+/* public/css/styles.css */
+
+.repo-table {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+    gap: 16px;
+}
+
+.repo {
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    background-color: #f8f8f8; /* Background color for each repository */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    margin-bottom: 10px;
+    outline-style: solid;
+}
+
+.repo a {
+    text-decoration: none;
+    color: #333; /* Link color */
+}
+
+.repo a:hover {
+    text-decoration: underline;
+}
